@@ -165,9 +165,10 @@ public class MainMenu {
      * This method initializes the picture taken from the source to the main menu
      */
     private void setDisplayPicture(){
+        //sets location as well as height and width of the image
         imageLabel.setBounds((WIDTH-412)/2, 25, 412, 412);
-        imageLabel.setVisible(true);
-        Menu.add(imageLabel);
-        Menu.setVisible(true);
+        imageLabel.setVisible(true);//sets the visibility of the image
+        Menu.add(imageLabel);//adds image to the main menu
+        Menu.setVisible(true);//sets the visibility of the menu at last after everything is added
     }
 }
