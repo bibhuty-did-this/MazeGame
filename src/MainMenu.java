@@ -22,9 +22,9 @@ public class MainMenu {
     private ArrayList<String> mapList;//Stores the names of the list of maps we have created or will create in future
     private JComboBox<String> lvlList;//It contains the names of all the existing maps in it
 
-    private int menuWidth;//Width of each button/item on display
-    private int menuHeight;//Height of each button/item on display
-    private int menuY; //Button/item location on display
+    private int MENU_WIDTH;//Width of each button/item on display
+    private int MENU_HEIGHT;//Height of each button/item on display
+    private int MENU_Y_COORDINATE; //Button/item location on display
     private int WIDTH;//Width of the menu
     private int HEIGHT;//Height of the menu
     
@@ -67,9 +67,9 @@ public class MainMenu {
         this.picture = new ImageIcon("res/Images/MazePicture.png");//Loads the picture from a given location to the variable
         this.imageLabel = new JLabel(picture);//Loads the picture from the variable to the label in the centre position
 
-        this.menuWidth = 100;
-        this.menuHeight = 30;
-        this.menuY = 460;
+        this.MENU_WIDTH = 100;
+        this.MENU_HEIGHT = 30;
+        this.MENU_Y_COORDINATE = 460;
         this.WIDTH = 550;
         this.HEIGHT = 530;
     }
@@ -109,8 +109,8 @@ public class MainMenu {
      * Start button
      */
     private void setStartButton(){
-        Start.setSize(menuWidth,menuHeight);//sets size of the button
-        Start.setLocation(10, menuY);//sets the location of the button
+        Start.setSize(MENU_WIDTH,MENU_HEIGHT);//sets size of the button
+        Start.setLocation(10, MENU_Y_COORDINATE);//sets the location of the button
         Menu.add(Start);//adds the button to main frame
         //function to define what happens when you click the button
         Start.addActionListener(event->{
@@ -128,8 +128,8 @@ public class MainMenu {
      * MapMaker button
      */
     private void setMapMakerButton(){
-        MapMaker.setSize(menuWidth+15,menuHeight);//sets the size of the button
-        MapMaker.setLocation(122, menuY);//sets the button at the specified location
+        MapMaker.setSize(MENU_WIDTH+15,MENU_HEIGHT);//sets the size of the button
+        MapMaker.setLocation(122, MENU_Y_COORDINATE);//sets the button at the specified location
         Menu.add(MapMaker);//add the button to the menu
         //function to define what happens when you click the button
         MapMaker.addActionListener(event->{
@@ -146,8 +146,8 @@ public class MainMenu {
      */
     private void setLevelSelectorDropDown(){
         lvlList = new JComboBox<>(mapList.toArray(new String[mapList.size()]));//put all the map names into it
-        lvlList.setSize(menuWidth+35, menuHeight);//sets the size of the drop down
-        lvlList.setLocation(250, menuY);//put the dropdown in the specified location
+        lvlList.setSize(MENU_WIDTH+35, MENU_HEIGHT);//sets the size of the drop down
+        lvlList.setLocation(250, MENU_Y_COORDINATE);//put the dropdown in the specified location
         Menu.add(lvlList);//add the drop down to the main menu
     }
 
@@ -155,8 +155,8 @@ public class MainMenu {
      * This method initializes and sets all the necessary functionality of the exit button
      */
     private void setExitButton(){
-        Exit.setSize(menuWidth,menuHeight);//sets the size of the exit button
-        Exit.setLocation(397,menuY);//sets the location where the button to be put
+        Exit.setSize(MENU_WIDTH,MENU_HEIGHT);//sets the size of the exit button
+        Exit.setLocation(397,MENU_Y_COORDINATE);//sets the location where the button to be put
         Menu.add(Exit);//adds exit to the main menu
         Exit.addActionListener(event->System.exit(0));//function to execute when the button is pressed
     }
